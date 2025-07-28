@@ -25,17 +25,11 @@ list_of_sets = [
     {"Python", "Java", "Swift"},
     {10, "ten", "20", 20}
 ]
+def convert_ls(p_ls):
+    final_set = set()
+    for item in p_ls:
+        final_set = final_set.union(item)
+    return final_set
 
-def convert_list_to_set(p_list):
-  new_set1 = set()
-  new_set2 = set()
-  new_list = list()
-  
-  for element1 in p_list:
-    new_set1.add(element1)
-    for element2 in p_list[element1]:
-      new_set2.add(element2)
-  
-  return f"set 1 : {new_set1}, set 2 : {new_set2}"
+print(convert_ls(list_of_sets))
 
-print(convert_list_to_set(list_of_sets))
