@@ -15,15 +15,17 @@ Example Output
 
 import re
 
-text = 'I come to CTRE every year'
+text = "I come to CTRE every year"
 
 def text_match(p_text):
-  regex_pattern = re.compile(r'^c+')
+  regex_pattern = re.compile(r'^[cC].+[eE]$')     #NOTE - re.compile(r'^c.+e$', re.I) to trigger the capital
   text_list = p_text.split()
-  
+  v_result = list()
   for word in text_list:
-    x = regex_pattern.findall(p_text)
+    x = regex_pattern.findall(word)
+    v_result.extend(x)
+  return v_result
+    
   
-  return x
 
 print(text_match(text))
